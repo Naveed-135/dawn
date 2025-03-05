@@ -154,7 +154,7 @@
             <a
               href="{{ card_product.url }}"
               id="CardLink-{{ section_id }}-{{ card_product.id }}"
-              class="full-unstyled-link"
+              class="full-unstyled-link tex"
               aria-labelledby="CardLink-{{ section_id }}-{{ card_product.id }} Badge-{{ section_id }}-{{ card_product.id }}"
             >
               {{ card_product.title | escape }}
@@ -638,5 +638,10 @@
 .pri{
   width: fit-content;
 }
+  .tex{
+    font-size:24px;
+    color:#525252;
+    line-height:32px;
+  }
   
 </style>
