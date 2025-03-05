@@ -1,6 +1,6 @@
 {% schema %}
 {
-  "name": "Text Slider",
+  "name": "Text Marquee",
   "blocks": [
     {
       "type": "text_item",
@@ -17,63 +17,65 @@
   ],
   "presets": [
     {
-      "name": "Text Slider"
+      "name": "Text Marquee"
     }
   ]
 }
 {% endschema %}
 
-<div class="text-slider">
-  {% for block in section.blocks %}
-    <div class="slide {% if forloop.first %}active{% endif %}">
-      <span class="text">{{ block.settings.text }}</span>
-      <span class="icon">✻</span>
-    </div>
-  {% endfor %}
+<div class="marquee-wrapper">
+  <div class="marquee">
+    {% for block in section.blocks %}
+      <div class="marquee-item">
+        <span class="text">{{ block.settings.text }}</span>
+        <span class="icon">✻</span>
+      </div>
+    {% endfor %}
+    {% for block in section.blocks %}
+      <div class="marquee-item">
+        <span class="text">{{ block.settings.text }}</span>
+        <span class="icon">✻</span>
+      </div>
+    {% endfor %}
+  </div>
 </div>
 <style>
-  .text-slider {
+  .marquee-wrapper {
+  width: 100%;
+  overflow: hidden;
+  background: white; /* Optional */
+  padding: 10px 0;
+  white-space: nowrap;
+}
+
+.marquee {
   display: flex;
-  justify-content: center;
+  gap: 50px; /* Space between texts */
+  animation: marquee-scroll 10s linear infinite;
+  width: max-content;
+}
+
+.marquee-item {
+  display: flex;
   align-items: center;
   font-size: 24px;
   font-weight: bold;
   color: gray;
-  overflow: hidden;
-  height: 40px;
-  position: relative;
-}
-
-.slide {
-  position: absolute;
-  opacity: 0;
-  transition: opacity 1s ease-in-out;
-  display: flex;
-  align-items: center;
   gap: 10px;
-}
-
-.slide.active {
-  opacity: 1;
 }
 
 .icon {
   font-size: 20px;
 }
 
-</style>
-<script>
-  document.addEventListener("DOMContentLoaded", function () {
-  let slides = document.querySelectorAll(".slide");
-  let index = 0;
-
-  function showNextSlide() {
-    slides[index].classList.remove("active");
-    index = (index + 1) % slides.length;
-    slides[index].classList.add("active");
+/* Smooth scrolling animation */
+@keyframes marquee-scroll {
+  from {
+    transform: translateX(0);
   }
+  to {
+    transform: translateX(-50%);
+  }
+}
 
-  setInterval(showNextSlide, 3000); // Change text every 3 seconds
-});
-
-</script>
+</style>
