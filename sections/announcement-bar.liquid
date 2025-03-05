@@ -1,6 +1,6 @@
 {% comment %} Announcement Bar {% endcomment %}
 {% if section.settings.announcement_text != blank %}
-  <div class="announcement-bar" style="background-color: {{ section.settings.bg_color }}">
+  <div class="announcement-bar page-width page-width-desktop" style="background-color: {{ section.settings.bg_color }}">
     <p>{{ section.settings.announcement_text }}</p>
     
     {% if section.settings.button_text != blank and section.settings.button_link != blank %}
