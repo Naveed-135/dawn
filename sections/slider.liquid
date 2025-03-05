@@ -1,6 +1,79 @@
 {% schema %}
-  {
-    "name": "Section name",
-    "settings": []
-  }
+{
+  "name": "Text Slider",
+  "blocks": [
+    {
+      "type": "text_item",
+      "name": "Text Item",
+      "settings": [
+        {
+          "type": "text",
+          "id": "text",
+          "label": "Text",
+          "default": "Long Lasting"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Text Slider"
+    }
+  ]
+}
 {% endschema %}
+
+<div class="text-slider">
+  {% for block in section.blocks %}
+    <div class="slide {% if forloop.first %}active{% endif %}">
+      <span class="text">{{ block.settings.text }}</span>
+      <span class="icon">✻</span>
+    </div>
+  {% endfor %}
+</div>
+<style>
+  .text-slider {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 24px;
+  font-weight: bold;
+  color: gray;
+  overflow: hidden;
+  height: 40px;
+  position: relative;
+}
+
+.slide {
+  position: absolute;
+  opacity: 0;
+  transition: opacity 1s ease-in-out;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.slide.active {
+  opacity: 1;
+}
+
+.icon {
+  font-size: 20px;
+}
+
+</style>
+<script>
+  document.addEventListener("DOMContentLoaded", function () {
+  let slides = document.querySelectorAll(".slide");
+  let index = 0;
+
+  function showNextSlide() {
+    slides[index].classList.remove("active");
+    index = (index + 1) % slides.length;
+    slides[index].classList.add("active");
+  }
+
+  setInterval(showNextSlide, 3000); // Change text every 3 seconds
+});
+
+</script>
