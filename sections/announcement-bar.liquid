@@ -1,6 +1,7 @@
 {% comment %} Announcement Bar {% endcomment %}
 {% if section.settings.announcement_text != blank %}
-  <div class="announcement-bar page-width page-width-desktop" style="background-color: {{ section.settings.bg_color }}">
+  <div class=max-width>
+  <div class="announcement-bar " style="background-color: {{ section.settings.bg_color }}">
     <p>{{ section.settings.announcement_text }}</p>
     
     {% if section.settings.button_text != blank and section.settings.button_link != blank %}
@@ -8,6 +9,7 @@
         {{ section.settings.button_text }}
       </a>
     {% endif %}
+  </div>
   </div>
 {% endif %}
 
@@ -81,5 +83,9 @@
         margin: 0px;
     color:#525252;
     font-weight:500;
+  }
+  .max-width{
+    max-width:1400px;
+    margin:auto;
   }
 {% endstyle %}
