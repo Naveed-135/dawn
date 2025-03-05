@@ -117,7 +117,7 @@
     "featured_collection_4rXpYU": {
       "type": "featured-collection",
       "settings": {
-        "collection": "",
+        "collection": "frontpage",
         "products_to_show": 3,
         "title": "Featured collection",
         "heading_size": "h1",
