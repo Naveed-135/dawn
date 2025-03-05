@@ -14,7 +14,7 @@
     "announcement-bar": {
       "type": "announcement-bar",
       "settings": {
-        "announcement_text": "Welcome to our store!",
+        "announcement_text": "Save up to 60% with code Audette",
         "button_text": "Shop Now",
         "button_link": "shopify://collections",
         "bg_color": "#f1f0ed"
