@@ -124,8 +124,12 @@ nav ul li {
     }
   }
 </style> -->
+
+
+
+
 <style>
-  .header__menu-split {
+  .header__container {
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -145,13 +149,13 @@ nav ul li {
     text-align: right;
   }
 
-  .header__heading-logo-wrapper {
+  .header__logo {
     flex: 0 0 auto;
     text-align: center;
     margin: 0 20px; /* Adjust spacing as needed */
   }
 
-  .header__heading-logo {
+  .header__logo img {
     max-width: 150px; /* Adjust logo size as needed */
   }
 
@@ -247,8 +251,11 @@ nav ul li {
 
 
 
+
+
 <header class="header header--middle-center page-width">
-  <div class="header__menu-split">
+  <div class="header__container">
+    <!-- Left Menu -->
     <div class="header__left-menu">
       <nav>
         <ul>
@@ -262,7 +269,8 @@ nav ul li {
       </nav>
     </div>
 
-    <div class="header__heading-logo-wrapper">
+    <!-- Logo -->
+    <div class="header__logo">
       <a href="{{ routes.root_url }}" class="header__heading-link link link--text focus-inset">
         {%- if settings.logo != blank -%}
           {%- assign logo_alt = settings.logo.alt | default: shop.name | escape -%}
@@ -287,6 +295,7 @@ nav ul li {
       </a>
     </div>
 
+    <!-- Right Menu -->
     <div class="header__right-menu">
       <nav>
         <ul>
