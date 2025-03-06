@@ -872,14 +872,14 @@
                     </div>
                     <div class="featured-collection-content-{{ section.id }}">
                       <p class="featured-collection-title-{{ section.id }}">{{ item.title }}</p>
-                      <p class="featured-collection-price-{{ section.id }} 2">
+                      {% comment %} <p class="featured-collection-price-{{ section.id }} 2">
                         {% if item.selected_or_first_available_variant.compare_at_price > item.selected_or_first_available_variant.price -%}
                           {{ item.selected_or_first_available_variant.price | money }}
                           <span>{{ item.selected_or_first_available_variant.compare_at_price | money }}</span>
                         {%- else -%}
                           {{- item.selected_or_first_available_variant.price | money -}}
                         {%- endif %}
-                      </p>
+                      </p> {% endcomment %}
                     </div>
                   </a>
                 {% endfor %}
