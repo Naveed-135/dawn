@@ -11,6 +11,11 @@
           "id": "text",
           "label": "Text",
           "default": "Long Lasting"
+        },
+        {
+          "type": "image_picker",
+          "id": "icon",
+          "label": "Icon"
         }
       ]
     }
@@ -28,19 +33,24 @@
     {% for block in section.blocks %}
       <div class="marquee-item">
         <span class="text">{{ block.settings.text }}</span>
-        <span class="icon">✻</span>
+        {% if block.settings.icon %}
+          <img src="{{ block.settings.icon | image_url }}" alt="icon" class="icon" />
+        {% endif %}
       </div>
     {% endfor %}
     {% for block in section.blocks %}
       <div class="marquee-item">
         <span class="text">{{ block.settings.text }}</span>
-        <span class="icon">✻</span>
+        {% if block.settings.icon %}
+          <img src="{{ block.settings.icon | image_url }}" alt="icon" class="icon" />
+        {% endif %}
       </div>
     {% endfor %}
   </div>
 </div>
+
 <style>
-  .marquee-wrapper {
+.marquee-wrapper {
   width: 100%;
   overflow: hidden;
   background: white; /* Optional */
@@ -65,10 +75,10 @@
 }
 
 .icon {
-  font-size: 60px;
+  width: 60px; /* Adjust size as needed */
+  height: auto;
 }
 
-/* Smooth scrolling animation */
 @keyframes marquee-scroll {
   from {
     transform: translateX(0);
@@ -77,13 +87,13 @@
     transform: translateX(-50%);
   }
 }
-.text{
- color:#A3A3A3;
-font-weight: 700;
-font-size: 84px;
-line-height: 1;
-letter-spacing: -0.02em;
-font-variant-numeric: slashed-zero;
 
+.text {
+  color: #A3A3A3;
+  font-weight: 700;
+  font-size: 84px;
+  line-height: 1;
+  letter-spacing: -0.02em;
+  font-variant-numeric: slashed-zero;
 }
 </style>
