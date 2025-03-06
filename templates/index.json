@@ -50,7 +50,7 @@
         "image": "shopify://shop_images/ILIA_2024_APRIL_HP_SLIDER-DESKTOP-2.png",
         "image_overlay_opacity": 0,
         "image_height": "adapt",
-        "image_behavior": "fixed",
+        "image_behavior": "none",
         "desktop_content_position": "bottom-center",
         "desktop_content_alignment": "left",
         "show_text_box": false,
@@ -122,6 +122,9 @@
     },
     "collection_carousel_wa7dGw": {
       "type": "collection-carousel",
+      "custom_css": [
+        ".p-0 {font-family: \"Neue Montreal\", sans-serif; font-weight: 700; font-size: 64px; line-height: 75px; letter-spacing: -0.02em; text-align: center; font-variant-numeric: slashed-zero; color: #525252;}"
+      ],
       "settings": {
         "items_mt": 40,
         "collection": "slider-collection",
@@ -143,7 +146,7 @@
         "image_radius": 12,
         "image_ration": "square",
         "use_custom_height": true,
-        "image_height_desktop": 400,
+        "image_height_desktop": 340,
         "image_height_mobile": 200,
         "show_second": false,
         "use_shadow": false,
@@ -215,7 +218,7 @@
         "padding_horizontal": 5,
         "padding_horizontal_mobile": 1.5,
         "full_width": false,
-        "content_width": 130,
+        "content_width": 120,
         "border_thickness": 0
       }
     }
