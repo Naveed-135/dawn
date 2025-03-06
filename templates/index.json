@@ -123,7 +123,7 @@
     "collection_carousel_wa7dGw": {
       "type": "collection-carousel",
       "custom_css": [
-        "p-0 {font-family: \"Neue Montreal\", sans-serif; font-weight: 700; font-size: 64px; line-height: 75px; letter-spacing: -0.02em; text-align: center; font-variant-numeric: slashed-zero; color: #525252;}"
+        ".p-0 {font-family: \"Neue Montreal\", sans-serif; font-weight: 700; font-size: 64px; line-height: 75px; letter-spacing: -0.02em; text-align: center; font-variant-numeric: slashed-zero; color: #525252;}"
       ],
       "settings": {
         "items_mt": 40,
