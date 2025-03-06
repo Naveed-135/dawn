@@ -3600,9 +3600,9 @@ details-disclosure > details {
 
 
 @font-face {
-font-family: "NAME OF FONT";
-src: url("NAME-OF-FONT-FILE.woff2") format("woff2"),
-url("NAME-OF-FONT-FILE.woff") format("woff");
+font-family: "NeueMontreal-Bold";
+src: url("NeueMontreal-Bold.woff2") format("woff2"),
+url("NeueMontreal-Bold.woff") format("woff");
 }
  
-Add Classes here with comma { font-family: "NAME OF FONT"!important; }
+Add Classes here with comma { font-family: "NeueMontreal-Bold"!important; }
