@@ -50,7 +50,7 @@
         "image_behavior": "fixed",
         "desktop_content_position": "bottom-center",
         "desktop_content_alignment": "center",
-        "show_text_box": false,
+        "show_text_box": true,
         "color_scheme": "scheme-3",
         "stack_images_on_mobile": false,
         "mobile_content_alignment": "center",
