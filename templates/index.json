@@ -44,7 +44,7 @@
         "button"
       ],
       "custom_css": [
-        "a{color:black; background:white;}"
+        "a {color: black; background: white;}"
       ],
       "settings": {
         "image": "shopify://shop_images/ILIA_2024_APRIL_HP_SLIDER-DESKTOP-2.png",
@@ -66,25 +66,25 @@
         "text_item_KwPqWJ": {
           "type": "text_item",
           "settings": {
-            "text": "Long Lasting"
+            "text": "Cruelty Free"
           }
         },
         "text_item_3cYDtK": {
           "type": "text_item",
           "settings": {
-            "text": "short text"
+            "text": "Long Lasting"
           }
         },
         "text_item_wQmR8E": {
           "type": "text_item",
           "settings": {
-            "text": "Long Lasting"
+            "text": "High Performance Shine"
           }
         },
         "text_item_q3bDxJ": {
           "type": "text_item",
           "settings": {
-            "text": "Long Lasting"
+            "text": "Cruelty Free"
           }
         },
         "text_item_Yr9EbL": {
@@ -96,13 +96,7 @@
         "text_item_LLUF6g": {
           "type": "text_item",
           "settings": {
-            "text": "Long Lasting"
-          }
-        },
-        "text_item_JfR3gB": {
-          "type": "text_item",
-          "settings": {
-            "text": "Long Lasting"
+            "text": "High Performance Shine"
           }
         }
       },
@@ -112,8 +106,7 @@
         "text_item_wQmR8E",
         "text_item_q3bDxJ",
         "text_item_Yr9EbL",
-        "text_item_LLUF6g",
-        "text_item_JfR3gB"
+        "text_item_LLUF6g"
       ],
       "settings": {}
     },
