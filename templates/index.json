@@ -43,6 +43,9 @@
         "text_HypL7B",
         "button"
       ],
+      "custom_css": [
+        "a{color:black; background:white;}"
+      ],
       "settings": {
         "image": "shopify://shop_images/ILIA_2024_APRIL_HP_SLIDER-DESKTOP-2.png",
         "image_overlay_opacity": 0,
