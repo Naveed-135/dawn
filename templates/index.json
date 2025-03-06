@@ -146,7 +146,7 @@
         "image_radius": 12,
         "image_ration": "square",
         "use_custom_height": true,
-        "image_height_desktop": 400,
+        "image_height_desktop": 340,
         "image_height_mobile": 200,
         "show_second": false,
         "use_shadow": false,
