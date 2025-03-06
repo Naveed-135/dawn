@@ -65,7 +65,6 @@
       "blocks": {
         "text_item_KwPqWJ": {
           "type": "text_item",
-          "disabled": true,
           "settings": {
             "text": "Cruelty Free"
           }
@@ -83,35 +82,12 @@
           "settings": {
             "text": "High Performance Shine"
           }
-        },
-        "text_item_q3bDxJ": {
-          "type": "text_item",
-          "disabled": true,
-          "settings": {
-            "text": "Cruelty Free"
-          }
-        },
-        "text_item_Yr9EbL": {
-          "type": "text_item",
-          "disabled": true,
-          "settings": {
-            "text": "Long Lasting"
-          }
-        },
-        "text_item_LLUF6g": {
-          "type": "text_item",
-          "settings": {
-            "text": "High Performance Shine"
-          }
         }
       },
       "block_order": [
         "text_item_KwPqWJ",
         "text_item_3cYDtK",
-        "text_item_wQmR8E",
-        "text_item_q3bDxJ",
-        "text_item_Yr9EbL",
-        "text_item_LLUF6g"
+        "text_item_wQmR8E"
       ],
       "settings": {}
     },
