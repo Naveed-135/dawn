@@ -65,30 +65,35 @@
       "blocks": {
         "text_item_KwPqWJ": {
           "type": "text_item",
+          "disabled": true,
           "settings": {
             "text": "Cruelty Free"
           }
         },
         "text_item_3cYDtK": {
           "type": "text_item",
+          "disabled": true,
           "settings": {
             "text": "Long Lasting"
           }
         },
         "text_item_wQmR8E": {
           "type": "text_item",
+          "disabled": true,
           "settings": {
             "text": "High Performance Shine"
           }
         },
         "text_item_q3bDxJ": {
           "type": "text_item",
+          "disabled": true,
           "settings": {
             "text": "Cruelty Free"
           }
         },
         "text_item_Yr9EbL": {
           "type": "text_item",
+          "disabled": true,
           "settings": {
             "text": "Long Lasting"
           }
