@@ -856,7 +856,7 @@
               {% if items != blank %}
                 {% for item in items limit:product_show %}
                   <a href="{{ item.url }}" class="swiper-slide">
-                    <div class="featured-collection-image-{{ section.id }} {% if item.images.size > 1 %} has-secondary-{{ section.id }} {% endif %}">
+                    <div class="featured-collection-image-{{ section.id }} {% if item.images.size > 1 %} has-secondary-{{ section.id }} {% endif %} non-meter">
                       {% if item.images.size > 0  %}
                         <img class="{% if item.images.size > 1 %}featured-collection-first-image-{{ section.id }}{% endif %}" src="{{ item.featured_image | image_url }}">
                       {% else %}
@@ -870,16 +870,9 @@
                         {% endfor %}
                       {% endif %}
                     </div>
-                    <div class="featured-collection-content-{{ section.id }}">
+                    <div class="featured-collection-content-{{ section.id }} no-meter">
                       <p class="featured-collection-title-{{ section.id }}">{{ item.title }}</p>
-                      {% comment %} <p class="featured-collection-price-{{ section.id }} 2">
-                        {% if item.selected_or_first_available_variant.compare_at_price > item.selected_or_first_available_variant.price -%}
-                          {{ item.selected_or_first_available_variant.price | money }}
-                          <span>{{ item.selected_or_first_available_variant.compare_at_price | money }}</span>
-                        {%- else -%}
-                          {{- item.selected_or_first_available_variant.price | money -}}
-                        {%- endif %}
-                      </p> {% endcomment %}
+                    
                     </div>
                   </a>
                 {% endfor %}
@@ -1781,3 +1774,12 @@
     ]
   }
 {% endschema %}
+
+<style>
+  .no-meter{
+    postion:absolute;
+  }
+  .non-meter{
+    postion:absolute;
+  }
+</style>
