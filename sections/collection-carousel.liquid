@@ -897,7 +897,7 @@
               <span class="animate-icon"></span>
             </div>
             {% unless top_bar %}
-              <div class="featured-collection-pagination-{{ section.id }} {% unless show_bar %} hide {% endunless %} swiper-pagination"></div>
+              <div class="featured-collection-pagination-{{ section.id }} {% unless show_bar %} hide {% endunless %} swiper-pagination pagination"></div>
             {% endunless %}
           </div>
         {% endunless %}
@@ -1797,5 +1797,7 @@
   letter-spacing: 0;
   color: #ffffff;
 }
-
+.pagination{
+  margin-top: 20px;
+}
 </style>
