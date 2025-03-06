@@ -419,7 +419,7 @@
     width: 8px;
     height: 1.6px;
     transform-origin: center;
-    opacity: 0;
+    
     background: currentColor;
     transform: scaleX(.5);
   }
@@ -890,7 +890,7 @@
                 {% endfor %}
               {% endif %}
             </div>
-            <div class="featured-collection-btn-prev-{{ section.id }}">
+            <div class="featured-collection-btn-prev-{{ section.id }} previous">
               <span class="animate-icon"></span>
             </div>
             <div class="featured-collection-btn-next-{{ section.id }}">
@@ -1800,6 +1800,9 @@
 .pagination{
   margin-top: 20px;
   width:90%;
-  
+
+}
+.previous{
+
 }
 </style>
