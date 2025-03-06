@@ -3599,10 +3599,10 @@ details-disclosure > details {
 
 
 
-@font-face {
+/* @font-face {
 font-family: "NeueMontreal-Bold";
 src: url("NeueMontreal-Bold.woff2") format("woff2"),
 url("NeueMontreal-Bold.woff") format("woff");
 }
  
-h1,h2,h3,h4,h5,h6,p, { font-family: "NeueMontreal-Bold"!important; }
+h1,h2,h3,h4,h5,h6,p, { font-family: "NeueMontreal-Bold"!important; } */
