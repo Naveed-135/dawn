@@ -66,21 +66,22 @@
         "text_item_KwPqWJ": {
           "type": "text_item",
           "settings": {
-            "text": "Cruelty Free"
+            "text": "Cruelty Free",
+            "icon": "shopify://shop_images/1c0a3fa7d771c24e09647bc1c778e2e1.svg"
           }
         },
         "text_item_3cYDtK": {
           "type": "text_item",
-          "disabled": true,
           "settings": {
-            "text": "Long Lasting"
+            "text": "Long Lasting",
+            "icon": "shopify://shop_images/1c0a3fa7d771c24e09647bc1c778e2e1.svg"
           }
         },
         "text_item_wQmR8E": {
           "type": "text_item",
-          "disabled": true,
           "settings": {
-            "text": "High Performance Shine"
+            "text": "High Performance Shine",
+            "icon": "shopify://shop_images/1c0a3fa7d771c24e09647bc1c778e2e1.svg"
           }
         }
       },
