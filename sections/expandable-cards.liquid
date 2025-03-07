@@ -3,6 +3,7 @@
     display: flex;
     width: 100%;
     gap: 10px; /* Adjust gap between cards */
+    align-items: stretch; /* Ensure all cards have the same height */
   }
 
   .card {
@@ -12,30 +13,29 @@
     overflow: hidden;
     border: 1px solid #ccc;
     cursor: pointer;
+    display: flex;
+    flex-direction: column;
   }
 
   .card img {
     width: 100%;
-    height: auto;
-    display: block;
+    height: 200px; /* Fixed height for images */
+    object-fit: cover; /* Ensure images cover the area */
   }
 
   .card-content {
     padding: 10px;
     background: rgba(255, 255, 255, 0.9);
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    right: 0;
+    flex-grow: 1; /* Ensure content takes remaining space */
     transform: translateY(100%);
     transition: transform 0.3s ease;
   }
 
-  .card:hover {
+  .card.hovered {
     flex: 2; /* Hovered card takes 40% width */
   }
 
-  .card:hover .card-content {
+  .card.hovered .card-content {
     transform: translateY(0);
   }
 
@@ -47,13 +47,6 @@
   .expandable-cards .card:first-child .card-content {
     transform: translateY(0);
   }
-  .card.hovered {
-  flex: 2; /* Hovered card takes 40% width */
-}
-
-.card.hovered .card-content {
-  transform: translateY(0);
-}
 </style>
 
 <div class="expandable-cards">
@@ -67,6 +60,7 @@
     </div>
   {% endfor %}
 </div>
+
 
 
 
@@ -92,6 +86,11 @@
     });
   });
 </script>
+
+
+
+
+
 {% schema %}
 {
   "name": "Expandable Cards",
