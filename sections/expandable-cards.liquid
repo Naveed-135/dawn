@@ -1,126 +1,139 @@
 <style>
-.expandable-cards {
-  display: flex;
-  width: 100%;
-  gap: 10px; /* Adjust gap between cards */
-  align-items: stretch; /* Ensure all cards have the same height */
-}
+  .expandable-cards {
+    display: flex;
+    width: 100%;
+    gap: 10px;
+    /* Adjust gap between cards */
+    align-items: stretch;
+    /* Ensure all cards have the same height */
+  }
 
-.card {
-  flex: 1;
-  transition: flex 0.3s ease;
-  position: relative;
-  overflow: hidden;
-  border: 1px solid #A3A3A3;
-  cursor: pointer;
-  display: flex;
-  flex-direction: column;
-  border-radius: 24px;
-  background: #F5F5F5;
-  height: 500px !important;
-}
+  .card {
+    flex: 1;
+    transition: flex 0.3s ease;
+    position: relative;
+    overflow: hidden;
+    border: 1px solid #A3A3A3;
+    cursor: pointer;
+    display: flex;
+    flex-direction: column;
+    border-radius: 24px;
+    background: #F5F5F5;
+    height: 500px !important;
+  }
 
-.card img {
-  width: 100%;
-  height: 100%; /* Image takes full height by default */
-  object-fit: cover; /* Ensure images cover the area */
-  padding: 10px;
-  background: #F5F5F5;
-  border-radius: 24px;
-  transition: height 0.3s ease; /* Smooth transition for height */
-}
+  .card img {
+    width: 100%;
+    height: 100%;
+    /* Image takes full height by default */
+    object-fit: cover;
+    /* Ensure images cover the area */
+    padding: 10px;
+    background: #F5F5F5;
+    border-radius: 24px;
+    transition: height 0.3s ease;
+    /* Smooth transition for height */
+  }
 
-.card-content {
-  padding: 10px;
-  background: #F5F5F5;
-  flex-grow: 1; /* Ensure content takes remaining space */
-  transform: translateY(100%);
-  transition: transform 0.3s ease;
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  right: 0;
-}
+  .card-content {
+    padding: 10px;
+    background: #F5F5F5;
+    flex-grow: 1;
+    /* Ensure content takes remaining space */
+    transform: translateY(100%);
+    transition: transform 0.3s ease;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+  }
 
-.card.hovered {
-  flex: 2; /* Hovered card takes more width */
-}
+  .card.hovered {
+    flex: 2;
+    /* Hovered card takes more width */
+  }
 
-.card.hovered img {
-  height: 60%; /* Image height reduces on hover */
-}
+  .card.hovered img {
+    height: 60%;
+    /* Image height reduces on hover */
+  }
 
-.card.hovered .card-content {
-  transform: translateY(0); /* Content slides up on hover */
-}
+  .card.hovered .card-content {
+    transform: translateY(0);
+    /* Content slides up on hover */
+  }
 
-.width-custom {
-  max-width: 120rem;
-  margin: auto;
-}
+  .width-custom {
+    max-width: 120rem;
+    margin: auto;
+  }
 
-.expandable-cards {
-  margin: 40px 0px;
-}
-.expent-h3{
-  font-family: 'Neue Montreal', sans-serif;
-font-weight: 700;
-font-size: 34px;
-line-height: 75px;
-letter-spacing: -0.02em; /* -2% converted to em */
-font-variant-numeric: slashed-zero;
-color: #525252;
-}
-.expent-p{
-  font-family: 'Neue Montreal', sans-serif;
-font-weight: 400;
-font-size: 20px;
-line-height: 23px;
-letter-spacing: -0.32px;
-font-variant-numeric: slashed-zero;
-color: #525252;
-}
-.expent-nu{
-  font-family: 'Neue Montreal', sans-serif;
-font-weight: 400;
-font-size: 32px;
-line-height: 32px;
-letter-spacing: -0.32px;
-font-variant-numeric: slashed-zero;
-color:#A3A3A3;
-}
+  .expandable-cards {
+    margin: 40px 0;
+  }
+  .expent-h3 {
+    font-family: 'Neue Montreal'
+    , sans-serif;
+    font-weight: 700;
+    font-size: 34px;
+    line-height: 75px;
+    letter-spacing: -0.02em;
+    /* -2% converted to em */
+    font-variant-numeric: slashed-zero;
+    color: #525252;
+    margin: 0;
+  }
+  .expent-p {
+    font-family: 'Neue Montreal'
+    , sans-serif;
+    font-weight: 400;
+    font-size: 20px;
+    line-height: 23px;
+    letter-spacing: -0.32px;
+    font-variant-numeric: slashed-zero;
+    color: #525252;
+  }
+  .expent-nu {
+    font-family: 'Neue Montreal'
+    , sans-serif;
+    font-weight: 400;
+    font-size: 32px;
+    line-height: 32px;
+    letter-spacing: -0.32px;
+    font-variant-numeric: slashed-zero;
+    color: #A3A3A3;
+  }
 </style>
 <div class="width-custom">
-<div class="expandable-cards">
-  {% for block in section.blocks %}
-    <div class="card {% if forloop.first %}hovered{% endif %}" {{ block.shopify_attributes }}>
-      <img src="{{ block.settings.image | img_url: '300x' }}" alt="{{ block.settings.title }}">
-      <div class="card-content">
-        <h3 class="expent-h3">{{ block.settings.title }}</h3>
-        <p class="expent-p">{{ block.settings.subtitle }}</p>
-        <p class="expent-nu">{{ block.settings.number_1 }}</p>
+  <div class="expandable-cards">
+    {% for block in section.blocks %}
+      <div class="card {% if forloop.first %}hovered{% endif %}" {{ block.shopify_attributes }}>
+        <img src="{{ block.settings.image | img_url: '300x' }}" alt="{{ block.settings.title }}">
+        <div class="card-content">
+          <h3 class="expent-h3">{{ block.settings.title }}</h3>
+          <p class="expent-p">{{ block.settings.subtitle }}</p>
+          <p class="expent-nu">{{ block.settings.number_1 }}</p>
+        </div>
       </div>
-    </div>
-  {% endfor %}
+    {% endfor %}
+  </div>
 </div>
-</div>
-
 
 
 <script>
   document.addEventListener('DOMContentLoaded', function () {
     const cards = document.querySelectorAll('.expandable-cards .card');
     const firstCard = cards[0];
-
+  
     // Function to set the first card to hover state
     function setFirstCardHover() {
       cards.forEach(card => card.classList.remove('hovered'));
       firstCard.classList.add('hovered');
     }
-
+  
     // Set the first card to hover state by default
     setFirstCardHover();
-
+  
     cards.forEach(card => {
       card.addEventListener('mouseenter', () => {
         // Remove hover state from all cards
@@ -128,7 +141,7 @@ color:#A3A3A3;
         // Add hover state to the current card
         card.classList.add('hovered');
       });
-
+  
       card.addEventListener('mouseleave', () => {
         // Revert to the first card being in the hover state
         setFirstCardHover();
@@ -138,48 +151,43 @@ color:#A3A3A3;
 </script>
 
 
-
-
 {% schema %}
-{
-  "name": "Expandable Cards",
-  "settings": [],
-  "blocks": [
-    {
-      "type": "card",
-      "name": "Card",
-      "settings": [
-        {
-          "type": "image_picker",
-          "id": "image",
-          "label": "Image"
-        },
-        {
-          "type": "text",
-          "id": "title",
-          "label": "Title",
-          "default": "Card Title"
-        },
-        {
-          "type": "text",
-          "id": "subtitle",
-          "label": "Subtitle",
-          "default": "Card Subtitle"
-        },
-        {
-          "type": "text",
-          "id": "number_1",
-          "label": "Count",
-          "default": "01"
-        }
-      ]
-    }
-  ],
-  "presets": [
-    {
-      "name": "Expandable Cards",
-      "category": "Custom"
-    }
-  ]
-}
+  {
+    "name": "Expandable Cards",
+    "settings": [],
+    "blocks": [
+      {
+        "type": "card",
+        "name": "Card",
+        "settings": [
+          {
+            "type": "image_picker",
+            "id": "image",
+            "label": "Image"
+          }, {
+            "type": "text",
+            "id": "title",
+            "label": "Title",
+            "default": "Card Title"
+          }, {
+            "type": "text",
+            "id": "subtitle",
+            "label": "Subtitle",
+            "default": "Card Subtitle"
+          }, {
+            "type": "text",
+            "id": "number_1",
+            "label": "Count",
+            "default": "01"
+          }
+        ]
+      }
+    ],
+    "presets": [
+      {
+        "name": "Expandable Cards",
+        "category": "Custom"
+      }
+    ]
+  }
 {% endschema %}
