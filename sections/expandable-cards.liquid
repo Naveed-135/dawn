@@ -38,20 +38,11 @@
   .card.hovered .card-content {
     transform: translateY(0);
   }
-
-  /* Default hover state for the first card */
-  .expandable-cards .card:first-child {
-    flex: 2;
-  }
-
-  .expandable-cards .card:first-child .card-content {
-    transform: translateY(0);
-  }
 </style>
 
 <div class="expandable-cards">
   {% for block in section.blocks %}
-    <div class="card" {{ block.shopify_attributes }}>
+    <div class="card {% if forloop.first %}hovered{% endif %}" {{ block.shopify_attributes }}>
       <img src="{{ block.settings.image | img_url: '300x' }}" alt="{{ block.settings.title }}">
       <div class="card-content">
         <h3>{{ block.settings.title }}</h3>
@@ -67,9 +58,16 @@
 <script>
   document.addEventListener('DOMContentLoaded', function () {
     const cards = document.querySelectorAll('.expandable-cards .card');
+    const firstCard = cards[0];
 
-    // Set the first card to be in the hover state by default
-    cards[0].classList.add('hovered');
+    // Function to set the first card to hover state
+    function setFirstCardHover() {
+      cards.forEach(card => card.classList.remove('hovered'));
+      firstCard.classList.add('hovered');
+    }
+
+    // Set the first card to hover state by default
+    setFirstCardHover();
 
     cards.forEach(card => {
       card.addEventListener('mouseenter', () => {
@@ -81,12 +79,11 @@
 
       card.addEventListener('mouseleave', () => {
         // Revert to the first card being in the hover state
-        cards[0].classList.add('hovered');
+        setFirstCardHover();
       });
     });
   });
 </script>
-
 
 
 
