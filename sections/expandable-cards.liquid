@@ -106,9 +106,37 @@
     color: #A3A3A3;
     margin-top: 20px;
   }
+  .heading-span {
+    font-family: 'Neue Montreal', sans-serif;
+font-weight: 500;
+font-size: 20px;
+line-height: 32px;
+letter-spacing: 0;
+text-transform: uppercase;
+color: #525252;
+  }
+  .heading-h2{
+    font-family: 'Neue Montreal', sans-serif;
+font-weight: 700;
+font-size: 64px;
+line-height: 75px;
+letter-spacing: -0.02em; /* -2% converted to em */
+text-align: center;
+font-variant-numeric: slashed-zero;
+color: #525252;
+  }
+  .boloi{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
 </style>
 <div class="width-custom">
   <div class="expandable-cards">
+    <div class="boloi">
+      <span class="heading-span">why choose us?</span>
+      <h2 class="heading-h2">Discover Audette Benefits</h2>
+    </div>
     {% for block in section.blocks %}
       <div class="card {% if forloop.first %}hovered{% endif %}" {{ block.shopify_attributes }}>
         <img src="{{ block.settings.image | img_url: '300x' }}" alt="{{ block.settings.title }}">
