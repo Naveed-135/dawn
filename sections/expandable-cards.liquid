@@ -38,15 +38,15 @@
   .card.hovered .card-content {
     transform: translateY(0);
   }
-  .custom-width-expend{
-    max-width: 120rem;
-    margin: auto;
+  .width-custom{
+    max-width:120rem;
+    margin:auto;
   }
   .expandable-cards{
-    margin: 40px 20px;
+    margin:40px 20px;
   }
 </style>
-<div class="custom-width-expend">
+<div class="width-custom">
 <div class="expandable-cards">
   {% for block in section.blocks %}
     <div class="card {% if forloop.first %}hovered{% endif %}" {{ block.shopify_attributes }}>
