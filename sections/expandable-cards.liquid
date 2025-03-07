@@ -132,11 +132,12 @@ color: #525252;
   }
 </style>
 <div class="width-custom">
-  <div class="expandable-cards">
-    <div class="boloi">
+  <div class="boloi">
       <span class="heading-span">why choose us?</span>
       <h2 class="heading-h2">Discover Audette Benefits</h2>
     </div>
+  <div class="expandable-cards">
+    
     {% for block in section.blocks %}
       <div class="card {% if forloop.first %}hovered{% endif %}" {{ block.shopify_attributes }}>
         <img src="{{ block.settings.image | img_url: '300x' }}" alt="{{ block.settings.title }}">
