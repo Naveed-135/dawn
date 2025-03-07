@@ -1,20 +1,51 @@
 <style>
+  .expandable-cards {
+    display: flex;
+    width: 100%;
+    gap: 10px; /* Adjust gap between cards */
+  }
+
   .card {
+    flex: 1;
+    transition: flex 0.3s ease;
+    position: relative;
+    overflow: hidden;
     border: 1px solid #ccc;
-    margin: 10px;
-    padding: 10px;
     cursor: pointer;
   }
+
   .card img {
     width: 100%;
     height: auto;
-  }
-  .card-content {
-    display: none;
-    padding-top: 10px;
-  }
-  .card.expanded .card-content {
     display: block;
+  }
+
+  .card-content {
+    padding: 10px;
+    background: rgba(255, 255, 255, 0.9);
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    transform: translateY(100%);
+    transition: transform 0.3s ease;
+  }
+
+  .card:hover {
+    flex: 2; /* Hovered card takes 40% width */
+  }
+
+  .card:hover .card-content {
+    transform: translateY(0);
+  }
+
+  /* Default hover state for the first card */
+  .expandable-cards .card:first-child {
+    flex: 2;
+  }
+
+  .expandable-cards .card:first-child .card-content {
+    transform: translateY(0);
   }
 </style>
 
@@ -22,19 +53,35 @@
   {% for block in section.blocks %}
     <div class="card" {{ block.shopify_attributes }}>
       <img src="{{ block.settings.image | img_url: '300x' }}" alt="{{ block.settings.title }}">
-      <h3>{{ block.settings.title }}</h3>
-      <p>{{ block.settings.subtitle }}</p>
       <div class="card-content">
-        <!-- Additional content can go here -->
+        <h3>{{ block.settings.title }}</h3>
+        <p>{{ block.settings.subtitle }}</p>
       </div>
     </div>
   {% endfor %}
 </div>
 
+
+
 <script>
-  document.querySelectorAll('.card').forEach(card => {
-    card.addEventListener('click', function() {
-      this.classList.toggle('expanded');
+  document.addEventListener('DOMContentLoaded', function () {
+    const cards = document.querySelectorAll('.expandable-cards .card');
+
+    // Set the first card to be in the hover state by default
+    cards[0].classList.add('hovered');
+
+    cards.forEach(card => {
+      card.addEventListener('mouseenter', () => {
+        // Remove hover state from all cards
+        cards.forEach(c => c.classList.remove('hovered'));
+        // Add hover state to the current card
+        card.classList.add('hovered');
+      });
+
+      card.addEventListener('mouseleave', () => {
+        // Revert to the first card being in the hover state
+        cards[0].classList.add('hovered');
+      });
     });
   });
 </script>
