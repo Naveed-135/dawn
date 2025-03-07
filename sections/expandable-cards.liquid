@@ -71,6 +71,7 @@
       <div class="card-content">
         <h3>{{ block.settings.title }}</h3>
         <p>{{ block.settings.subtitle }}</p>
+        <p>{{block.settings.number_1}}</p>
       </div>
     </div>
   {% endfor %}
@@ -137,6 +138,12 @@
           "id": "subtitle",
           "label": "Subtitle",
           "default": "Card Subtitle"
+        },
+        {
+          "type": "number",
+          "id": "number_1",
+          "label": "Count",
+          "default": 0
         }
       ]
     }
