@@ -16,15 +16,15 @@
     display: flex;
     flex-direction: column;
     border-radius: 24px;
-     background: #F5F5F5;
-    height:500px !important;
+    background: #F5F5F5;
+    height: 100%; /* Ensure cards take full height */
   }
 
   .card img {
     width: 100%;
     height: 60%; /* Fixed height for images */
     object-fit: cover; /* Ensure images cover the area */
-        padding: 10px;
+    padding: 10px;
     background: #F5F5F5;
     border-radius: 24px;
   }
@@ -35,23 +35,28 @@
     flex-grow: 1; /* Ensure content takes remaining space */
     transform: translateY(100%);
     transition: transform 0.3s ease;
+    height: 40%; /* Ensure content takes 40% of the card height */
   }
 
   .card.hovered {
-    flex: 2; /* Hovered card takes 40% width */
+    flex: 2; /* Hovered card takes more width */
   }
 
   .card.hovered .card-content {
     transform: translateY(0);
   }
-  .width-custom{
-    max-width:120rem;
-    margin:auto;
+
+  .width-custom {
+    max-width: 120rem;
+    margin: auto;
   }
-  .expandable-cards{
-    margin:40px 0px;
+
+  .expandable-cards {
+    margin: 40px 0px;
   }
 </style>
+
+
 <div class="width-custom">
 <div class="expandable-cards">
   {% for block in section.blocks %}
