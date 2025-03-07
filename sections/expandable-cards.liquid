@@ -1,6 +1,77 @@
-{% schema %}
-  {
-    "name": "Section name",
-    "settings": []
+<style>
+  .card {
+    border: 1px solid #ccc;
+    margin: 10px;
+    padding: 10px;
+    cursor: pointer;
   }
+  .card img {
+    width: 100%;
+    height: auto;
+  }
+  .card-content {
+    display: none;
+    padding-top: 10px;
+  }
+  .card.expanded .card-content {
+    display: block;
+  }
+</style>
+
+<div class="expandable-cards">
+  {% for block in section.blocks %}
+    <div class="card" {{ block.shopify_attributes }}>
+      <img src="{{ block.settings.image | img_url: '300x' }}" alt="{{ block.settings.title }}">
+      <h3>{{ block.settings.title }}</h3>
+      <p>{{ block.settings.subtitle }}</p>
+      <div class="card-content">
+        <!-- Additional content can go here -->
+      </div>
+    </div>
+  {% endfor %}
+</div>
+
+<script>
+  document.querySelectorAll('.card').forEach(card => {
+    card.addEventListener('click', function() {
+      this.classList.toggle('expanded');
+    });
+  });
+</script>
+{% schema %}
+{
+  "name": "Expandable Cards",
+  "settings": [],
+  "blocks": [
+    {
+      "type": "card",
+      "name": "Card",
+      "settings": [
+        {
+          "type": "image_picker",
+          "id": "image",
+          "label": "Image"
+        },
+        {
+          "type": "text",
+          "id": "title",
+          "label": "Title",
+          "default": "Card Title"
+        },
+        {
+          "type": "text",
+          "id": "subtitle",
+          "label": "Subtitle",
+          "default": "Card Subtitle"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Expandable Cards",
+      "category": "Custom"
+    }
+  ]
+}
 {% endschema %}
