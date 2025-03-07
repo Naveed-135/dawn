@@ -1,57 +1,67 @@
 <style>
-  .expandable-cards {
-    display: flex;
-    width: 100%;
-    gap: 10px; /* Adjust gap between cards */
-    align-items: stretch; /* Ensure all cards have the same height */
-  }
+.expandable-cards {
+  display: flex;
+  width: 100%;
+  gap: 10px; /* Adjust gap between cards */
+  align-items: stretch; /* Ensure all cards have the same height */
+}
 
-  .card {
-    flex: 1;
-    transition: flex 0.3s ease;
-    position: relative;
-    overflow: hidden;
-    border: 1px solid #A3A3A3;
-    cursor: pointer;
-    display: flex;
-    flex-direction: column;
-    padding: 10px;
-    background: #F5F5F5;
-    border-radius: 24px;
-    height: 450px !important;
-  }
+.card {
+  flex: 1;
+  transition: flex 0.3s ease;
+  position: relative;
+  overflow: hidden;
+  border: 1px solid #A3A3A3;
+  cursor: pointer;
+  display: flex;
+  flex-direction: column;
+  border-radius: 24px;
+  background: #F5F5F5;
+  height: 500px !important;
+}
 
-  .card img {
-    width: 100%;
-    height: 60%; /* Fixed height for images */
-    object-fit: cover; /* Ensure images cover the area */
-    padding: 10px;
-    background: #F5F5F5;
-    border-radius: 24px;
-  }
+.card img {
+  width: 100%;
+  height: 100%; /* Image takes full height by default */
+  object-fit: cover; /* Ensure images cover the area */
+  padding: 10px;
+  background: #F5F5F5;
+  border-radius: 24px;
+  transition: height 0.3s ease; /* Smooth transition for height */
+}
 
-  .card-content {
-    padding: 10px;
-    background: #F5F5F5;
-    flex-grow: 1; /* Ensure content takes remaining space */
-    transform: translateY(100%);
-    transition: transform 0.3s ease;
-  }
+.card-content {
+  padding: 10px;
+  background: #F5F5F5;
+  flex-grow: 1; /* Ensure content takes remaining space */
+  transform: translateY(100%);
+  transition: transform 0.3s ease;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+}
 
-  .card.hovered {
-    flex: 2; /* Hovered card takes 40% width */
-  }
+.card.hovered {
+  flex: 2; /* Hovered card takes more width */
+}
 
-  .card.hovered .card-content {
-    transform: translateY(0);
-  }
-  .width-custom{
-    max-width:120rem;
-    margin:auto;
-  }
-  .expandable-cards{
-    margin:40px 0px;
-  }
+.card.hovered img {
+  height: 60%; /* Image height reduces on hover */
+}
+
+.card.hovered .card-content {
+  transform: translateY(0); /* Content slides up on hover */
+}
+
+.width-custom {
+  max-width: 120rem;
+  margin: auto;
+}
+
+.expandable-cards {
+  margin: 40px 0px;
+}
 </style>
 <div class="width-custom">
 <div class="expandable-cards">
