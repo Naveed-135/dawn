@@ -62,6 +62,33 @@
 .expandable-cards {
   margin: 40px 0px;
 }
+.expent-h3{
+  font-family: 'Neue Montreal', sans-serif;
+font-weight: 700;
+font-size: 34px;
+line-height: 75px;
+letter-spacing: -0.02em; /* -2% converted to em */
+font-variant-numeric: slashed-zero;
+color: #525252;
+}
+.expent-p{
+  font-family: 'Neue Montreal', sans-serif;
+font-weight: 400;
+font-size: 20px;
+line-height: 23px;
+letter-spacing: -0.32px;
+font-variant-numeric: slashed-zero;
+color: #525252;
+}
+.expent-nu{
+  font-family: 'Neue Montreal', sans-serif;
+font-weight: 400;
+font-size: 32px;
+line-height: 32px;
+letter-spacing: -0.32px;
+font-variant-numeric: slashed-zero;
+color:#A3A3A3;
+}
 </style>
 <div class="width-custom">
 <div class="expandable-cards">
@@ -69,9 +96,9 @@
     <div class="card {% if forloop.first %}hovered{% endif %}" {{ block.shopify_attributes }}>
       <img src="{{ block.settings.image | img_url: '300x' }}" alt="{{ block.settings.title }}">
       <div class="card-content">
-        <h3>{{ block.settings.title }}</h3>
-        <p>{{ block.settings.subtitle }}</p>
-        <p>{{ block.settings.number_1 }}</p>
+        <h3 class="expent-h3">{{ block.settings.title }}</h3>
+        <p class="expent-p">{{ block.settings.subtitle }}</p>
+        <p class="expent-nu">{{ block.settings.number_1 }}</p>
       </div>
     </div>
   {% endfor %}
