@@ -43,6 +43,7 @@
         "text_HypL7B",
         "button"
       ],
+      "disabled": true,
       "custom_css": [
         "a {color: black; background: white;}"
       ],
@@ -90,10 +91,12 @@
         "text_item_3cYDtK",
         "text_item_wQmR8E"
       ],
+      "disabled": true,
       "settings": {}
     },
     "featured_collection_4rXpYU": {
       "type": "featured-collection",
+      "disabled": true,
       "settings": {
         "collection": "frontpage",
         "products_to_show": 3,
@@ -166,6 +169,7 @@
         "card_daVTn3",
         "card_L3kjXh"
       ],
+      "disabled": true,
       "settings": {}
     },
     "collection_carousel_wa7dGw": {
